@@ -61,10 +61,6 @@ module Capybara
         failure_message.sub(/(to find)/, 'not \1')
       end
 
-      # RSpec 2 compatibility:
-      alias_method :failure_message_for_should, :failure_message
-      alias_method :failure_message_for_should_not, :failure_message_when_negated
-
       def description
         "text #{format(content)}"
       end
@@ -99,10 +95,6 @@ module Capybara
       def failure_message_when_negated
         "expected there not to be title #{title.inspect} in #{@actual.title.inspect}"
       end
-
-      # RSpec 2 compatibility:
-      alias_method :failure_message_for_should, :failure_message
-      alias_method :failure_message_for_should_not, :failure_message_when_negated
 
       def description
         "have title #{title.inspect}"
